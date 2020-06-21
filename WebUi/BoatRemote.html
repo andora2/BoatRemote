@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <title>ESP8266 Boat Remote</title>
+    <style>
+      body { background-color: #cccccc; font-family: Arial, Helvetica, Sans-Serif; Color: #000088; }
+    </style>
+  </head>
+  <body>
+    <h1>ESP8266 Boat Remote!</h1>
+    <p>Uptime: %02d:%02d:%02d</p>
+    <button onclick='turnPinOn()'>Pin ON</button>
+    <button onclick='turnPinOff()'>Pin OFF</button>
+    <button onclick='turnRight()'>Turn Right</button>
+    <button onclick='turnLeft()'>Turn Left</button>
+    <button onclick='turnOff()'>Turn Off</button>
+    <button onclick='makeFaster()'>Faster</button>
+    <button onclick='makeSlower()'>Slower</button>
+  <script>
+  function turnPinOn() {
+    var request = new XMLHttpRequest();
+    request.open('GET', 'http://192.168.0.118/pin_on');
+    request.send(null);
+  }
+  function turnPinOff() {
+    var request = new XMLHttpRequest();
+    request.open('GET', 'http://192.168.0.118/pin_off');
+    request.send(null);
+  }
+  function turnRight() {
+    var request = new XMLHttpRequest();
+    request.open('GET', 'http://192.168.0.118/right');
+    request.send(null);
+  }
+  function turnLeft() {
+    var request = new XMLHttpRequest();
+    request.open('GET', 'http://192.168.0.118/left');
+    request.send(null);
+  }
+  function turnOff() {
+    var request = new XMLHttpRequest();
+    request.open('GET', 'http://192.168.0.118/off');
+    request.send(null);
+  }  
+  function makeFaster() {
+    var request = new XMLHttpRequest();
+    request.open('GET', 'http://192.168.0.118/faster');
+    request.send(null);
+  }  
+  function makeSlower() {
+    var request = new XMLHttpRequest();
+    request.open('GET', 'http://192.168.0.118/slower');
+    request.send(null);
+  }  
+  </script>
+  </body>
+</html>
